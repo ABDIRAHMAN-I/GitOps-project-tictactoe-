@@ -1,0 +1,93 @@
+:root {
+    --primary: #ff6b6b;
+    --secondary: #4ecdc4;
+    --background: #f7fff7;
+    --text: #1a535c;
+    --win-color: #ffe66d;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'Jua', sans-serif;
+    background: var(--background);
+    color: var(--text);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+  }
+  
+  body.dark {
+    --background: #1a1a1d;
+    --text: #c9c9c9;
+  }
+  
+  header {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 15px;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background: var(--secondary);
+  }
+  
+  .status {
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 10px;
+    margin: 30px 0;
+  }
+  
+  .box {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border: 3px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease;
+  }
+  
+  .box:hover {
+    transform: scale(1.1);
+    background: var(--secondary);
+    color: white;
+  }
+  
+  .box.win {
+    background: var(--win-color);
+    animation: pulse 0.5s infinite alternate;
+  }
+  
+  @keyframes pulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+  }
+  
+  footer {
+    margin-top: auto;
+    text-align: center;
+    color: gray;
+  }
+  
